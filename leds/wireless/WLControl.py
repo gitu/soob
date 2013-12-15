@@ -29,7 +29,8 @@ class WLControl():
                 "API command specifications could not be found; use a derived class which defines 'api_commands'.")
 
         if "hex_pack" in cmd_spec:
-            return pack(cmd_spec["hex_pack"], args[0].decode('hex'))
+            hex_arg = args[0].decode('hex')
+            return pack(cmd_spec["hex_pack"], *hex_arg)
         elif "pack" in cmd_spec:
             return pack(cmd_spec["pack"], *args)
         else:
