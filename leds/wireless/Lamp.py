@@ -1,4 +1,4 @@
-from redbox.wireless.WLControl import WLControl
+from .WLControl import WLControl
 from binascii import unhexlify
 
 
