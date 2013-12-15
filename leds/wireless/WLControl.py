@@ -28,11 +28,12 @@ class WLControl():
             raise NotImplementedError(
                 "API command specifications could not be found; use a derived class which defines 'api_commands'.")
 
-        if "pack" not in cmd_spec:
-            return None
-
-        if "pack" in cmd_spec:
+        if "hex_pack" in cmd_spec:
+            return pack(cmd_spec["hex_pack"], args[0].decode('hex'))
+        elif "pack" in cmd_spec:
             return pack(cmd_spec["pack"], *args)
+        else:
+            return None
 
     def _cmd_byte(self, cmd):
         try:
