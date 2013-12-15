@@ -9,7 +9,7 @@ packets from an XBee device and call an appropriate method when
 one arrives.
 """
 
-from xbee import XBee
+from wireless.xbee import XBee
 
 class Dispatch(object):
     def __init__(self, ser=None, xbee=None):

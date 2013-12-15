@@ -11,9 +11,12 @@ This class defines data and methods common to all XBee modules.
 This class should be subclassed in order to provide
 series-specific functionality.
 """
-import struct, threading, time
-from xbee.frame import APIFrame
-from xbee.python2to3 import byteToInt, intToByte
+import threading
+import time
+
+from .frame import APIFrame
+from .python2to3 import byteToInt
+
 
 class ThreadQuitException(Exception):
     pass

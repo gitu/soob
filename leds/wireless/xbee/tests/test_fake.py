@@ -8,7 +8,7 @@ pmalmsten@gmail.com
 Tests fake device objects for proper functionality.
 """
 import unittest
-from xbee.tests.Fake import FakeReadDevice
+from leds.wireless.xbee.tests.Fake import FakeReadDevice
 
 class TestFakeReadDevice(unittest.TestCase):
     """

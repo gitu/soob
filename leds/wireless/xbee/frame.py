@@ -7,7 +7,7 @@ pmalmsten@gmail.com
 Represents an API frame for communicating with an XBee
 """
 import struct
-from xbee.python2to3 import byteToInt, intToByte
+from .python2to3 import byteToInt, intToByte
 
 class APIFrame:
     """

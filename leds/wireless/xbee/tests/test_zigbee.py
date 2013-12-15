@@ -7,7 +7,7 @@ pmalmsten@gmail.com
 Tests the XBee ZB (ZigBee) implementation class for API compliance
 """
 import unittest
-from xbee.zigbee import ZigBee
+from leds.wireless.xbee.zigbee import ZigBee
 
 class TestZigBee(unittest.TestCase):
     """

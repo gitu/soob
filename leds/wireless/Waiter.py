@@ -1,5 +1,5 @@
 import threading
-from redbox.wireless import Timeout
+from . import Timeout
 
 
 class Waiter(threading.Thread):

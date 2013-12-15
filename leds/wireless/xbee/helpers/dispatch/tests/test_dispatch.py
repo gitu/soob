@@ -7,8 +7,8 @@ pmalmsten@gmail.com
 Tests the Dispatch module.
 """
 import unittest
-from xbee.helpers.dispatch import Dispatch
-from xbee.helpers.dispatch.tests.fake import FakeXBee
+from leds.wireless.xbee.helpers.dispatch import Dispatch
+from leds.wireless.xbee.helpers.dispatch.tests.fake import FakeXBee
 
 class CallbackCheck(object):
     def __init__(self):

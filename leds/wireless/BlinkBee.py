@@ -1,8 +1,7 @@
-from binascii import hexlify
 import itertools
-from redbox.wireless.FrameConsumer import FrameConsumer
-from redbox.wireless.implemented_waiters import WaitForResponse, WaitForConfirm
-from xbee import ZigBee
+from .FrameConsumer import FrameConsumer
+from .implemented_waiters import WaitForResponse, WaitForConfirm
+from .xbee import ZigBee
 
 
 class BlinkBee():

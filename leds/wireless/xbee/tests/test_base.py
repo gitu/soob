@@ -8,8 +8,8 @@ pmalmsten@gmail.com
 Tests the XBeeBase superclass module for XBee API conformance.
 """
 import unittest
-from xbee.base import XBeeBase
-from xbee.tests.Fake import FakeDevice, FakeReadDevice
+from leds.wireless.xbee.base import XBeeBase
+from leds.wireless.xbee.tests.Fake import FakeDevice, FakeReadDevice
 
 class TestWriteToDevice(unittest.TestCase):
     """

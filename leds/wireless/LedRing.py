@@ -1,7 +1,7 @@
 from binascii import unhexlify, hexlify
 from string import join
 from struct import pack
-from redbox.wireless.WLControl import WLControl
+from .WLControl import WLControl
 
 
 class LedRing(WLControl):

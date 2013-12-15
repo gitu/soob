@@ -1,6 +1,6 @@
 from binascii import hexlify
-from redbox.wireless import TransmitError
-from redbox.wireless.Waiter import Waiter
+from . import TransmitError
+from .Waiter import Waiter
 
 
 class WaitForResponse(Waiter):

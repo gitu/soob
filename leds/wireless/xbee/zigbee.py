@@ -9,8 +9,9 @@ gdrapp@gmail.com
 This module implements an XBee ZB (ZigBee) API library.
 """
 import struct
-from xbee.base import XBeeBase
-from xbee.python2to3 import byteToInt, intToByte
+from .base import XBeeBase
+from .python2to3 import byteToInt
+
 
 class ZigBee(XBeeBase):
     """

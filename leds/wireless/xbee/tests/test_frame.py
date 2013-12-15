@@ -8,8 +8,8 @@ pmalmsten@gmail.com
 Tests frame module for proper behavior
 """
 import unittest
-from xbee.frame import APIFrame
-from xbee.python2to3 import byteToInt, intToByte
+from leds.wireless.xbee.frame import APIFrame
+from leds.wireless.xbee.python2to3 import byteToInt, intToByte
 
 class TestAPIFrameGeneration(unittest.TestCase):
     """

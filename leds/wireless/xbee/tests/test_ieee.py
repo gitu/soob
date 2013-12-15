@@ -7,11 +7,15 @@ pmalmsten@gmail.com
 
 Tests the XBee (IEEE 802.15.4) implementation class for XBee API compliance
 """
-import unittest, sys, traceback
-from xbee.tests.Fake import FakeDevice, FakeReadDevice
-from xbee.ieee import XBee
-from xbee.frame import APIFrame
-from xbee.python2to3 import byteToInt, intToByte, stringToBytes
+import unittest
+import sys
+import traceback
+
+from leds.wireless.xbee.tests.Fake import FakeDevice, FakeReadDevice
+from leds.wireless.xbee.ieee import XBee
+from leds.wireless.xbee.frame import APIFrame
+from leds.wireless.xbee.python2to3 import intToByte, stringToBytes
+
 
 class InitXBee(unittest.TestCase):
     """
@@ -117,7 +121,7 @@ class TestSplitResponse(InitXBee):
         ID but is a valid transmission ID, show a helpful error indicating 
         that a device may be in command mode.
         """
-        from xbee.base import CommandFrameException
+        from leds.wireless.xbee.base import CommandFrameException
         data = b'\x01\x00\x00\x00'
         
         try:
