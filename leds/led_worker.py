@@ -1,42 +1,48 @@
-from celery import Celery
 import serial
+from time import sleep
+from wireless.constants import *
 from wireless import Lamp, LedRing, BlinkBee, TransmitError, Timeout
-app = Celery()
-
-CONTROLLER =  b'\x00\x13\xa2\x00\x40\xb0\xa1\xad'
-LED_RING = b'\x00\x13\xa2\x00\x40\xab\x97\x64'
-BLINK = b'\x00\x13\xa2\x00\x40\xac\xc4\x90'
+import logging
+from queue import LedCommandQueue
 
 
-from celery.task import Task
-from celery.registry import tasks
-from celery.signals import task_prerun
 
-_precalc_table = {}
+if __name__ == "__main__":
+    led_queue = LedCommandQueue()
 
-class PowersOfTwo(Task):
+    xbee_serial = serial.Serial('/dev/ttyUSB0', 9600)
+    try:
+        blink_bee = BlinkBee(xbee_serial)
+        led_ring = LedRing(blink_bee, b'\xff\xfe', XADDR_LED_RING)
+        lamp = Lamp(blink_bee, b'\xff\xfe', XADDR_LAMP)
+        led_ring.set_position(0)
+        led_ring.rotate_off()
+        led_ring.level_green(0)
 
-    def run(self, x):
-        if x in _precalc_table:
-            return _precalc_table[x]
-        else:
-            return x ** 2
-tasks.register(PowersOfTwo)
+        while True:
+            try:
+                command = led_queue.popleft()
+                if command is None:
+                    logging.debug("timed out waiting for queues")
+                elif command['action'] == 'set_ring':
+                    lamp.set_static(command['data'])
+                elif command['action'] == 'set_big':
+                    colors = []
+                    for id in range(16):
+                        if id in command['data']:
+                            colors.append(command['data'][id])
+                        else:
+                            colors.append("000000")
+                    led_ring.set_colors(colors)
+                    logging.debug(colors)
+            except TransmitError, e:
+                logging.exception("transmit error...")
+            except Timeout, e:
+                logging.exception("timeout reached...")
 
-
-def _precalc_numbers(**kwargs):
-    if not _precalc_table: # it's empty, so haven't been generated yet
-        for i in range(1024):
-            _precalc_table[i] = i ** 2
-
-
-# need to use registered instance for sender argument.
-task_prerun.connect(_precalc_numbers, sender=tasks[PowerOfTwo.name])
-
-
-@app.task
-def blink_
-
-if __name__ == '__main__':
-    app.worker_main()
-
+    except TransmitError, e:
+        logging.exception("transmit error...")
+    except Timeout, e:
+        logging.exception("timeout reached...")
+    finally:
+        xbee_serial.close()

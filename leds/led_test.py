@@ -1,6 +1,8 @@
 import serial
+from time import sleep
 from wireless.constants import *
 from wireless import Lamp, LedRing, BlinkBee, TransmitError, Timeout
+import logging
 
 
 if __name__ == "__main__":
@@ -14,7 +16,10 @@ if __name__ == "__main__":
         led_ring.set_position(0)
         led_ring.rotate_off()
         led_ring.level_green(2)
-        #lamp.set_color('FF00FF')
-        time.sleep(2)
+        sleep(2)
+    except TransmitError, e:
+        raw_input("Press Enter to continue...")
+    except Timeout, e:
+        print "Reached Timeout: " + e.msg
     finally:
         xbee_serial.close()
