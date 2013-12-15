@@ -1,8 +1,9 @@
-import SqliteQueue
+from SqliteQueue import SqliteQueue
 import ConfigParser
 
-class LedCommandQueue(SqliteQueue):
-    def __init__(self):
-        config = ConfigParser.ConfigParser()
-        config.read("../config.ini")
-        super.__init__(config.get("DB","file"),"led_commands")
+def make_led_queue():
+    config = ConfigParser.ConfigParser()
+    config.read("../config.ini")
+    path = config.get("DB","file")
+    q = SqliteQueue(path,"led_commands")
+    return q

@@ -1,1 +1,1 @@
-from LedsCommandQueue import LedCommandQueue
+from LedsCommandQueue import *
