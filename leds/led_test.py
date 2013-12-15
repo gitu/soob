@@ -9,8 +9,12 @@ if __name__ == "__main__":
         blink_bee = BlinkBee(xbee_serial)
         led_ring = LedRing(blink_bee, b'\xff\xfe', XADDR_LED_RING)
         lamp = Lamp(blink_bee, b'\xff\xfe', XADDR_LAMP)
-
-        lamp.set_color('FF00FF')
-        led_ring.level_green(10)
+        lamp.set_static(0,255,0)
+        
+        led_ring.set_position(0)
+        led_ring.rotate_off()
+        led_ring.level_green(2)
+        #lamp.set_color('FF00FF')
+        time.sleep(2)
     finally:
         xbee_serial.close()
