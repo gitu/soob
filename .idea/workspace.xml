@@ -1,37 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50cb381d-9966-447b-aa21-86272357519c" name="Default" comment=".">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leds/wireless/xbee/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leds/wireless/xbee/helpers/dispatch/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leds/wireless/xbee/tests/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leds/led_test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leds/led_worker.py" />
-      <change type="DELETED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\helpers\dispatch\__init__.py" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\base.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/base.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\frame.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/frame.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\helpers\__init__.py" afterPath="$PROJECT_DIR$/leds/wireless/constants.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\helpers\dispatch\dispatch.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/helpers/dispatch/dispatch.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\helpers\dispatch\tests\__init__.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/helpers/__init__.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\helpers\dispatch\tests\fake.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/helpers/dispatch/tests/fake.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\helpers\dispatch\tests\test_dispatch.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/helpers/dispatch/tests/test_dispatch.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\ieee.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/ieee.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\python2to3.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/python2to3.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\tests\Fake.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/tests/Fake.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\tests\__init__.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/helpers/dispatch/tests/__init__.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\tests\test_base.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/tests/test_base.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\tests\test_fake.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/tests/test_fake.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\tests\test_frame.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/tests/test_frame.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\tests\test_ieee.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/tests/test_ieee.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\tests\test_zigbee.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/tests/test_zigbee.py" />
-      <change type="MOVED" beforePath="C:\Users\taascfl1\IntelliJProjects\soob\leds\xbee\zigbee.py" afterPath="$PROJECT_DIR$/leds/wireless/xbee/zigbee.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leds/wireless/BlinkBee.py" afterPath="$PROJECT_DIR$/leds/wireless/BlinkBee.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leds/wireless/LedRing.py" afterPath="$PROJECT_DIR$/leds/wireless/LedRing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leds/wireless/Waiter.py" afterPath="$PROJECT_DIR$/leds/wireless/Waiter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leds/wireless/__init__.py" afterPath="$PROJECT_DIR$/leds/wireless/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leds/wireless/implemented_waiters.py" afterPath="$PROJECT_DIR$/leds/wireless/implemented_waiters.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="50cb381d-9966-447b-aa21-86272357519c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leds/led_test.py" afterPath="$PROJECT_DIR$/leds/led_test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="soob.iws" />
@@ -80,7 +51,7 @@
       <file leaf-file-name="led_test.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/leds/led_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="21" selection-start="338" selection-end="338" vertical-scroll-proportion="0.32380953" vertical-offset="0" max-vertical-offset="525">
+            <state line="6" column="44" selection-start="189" selection-end="189" vertical-scroll-proportion="0.19428572" vertical-offset="0" max-vertical-offset="525">
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -502,7 +473,11 @@
       <created>1387131619788</created>
       <updated>1387131619788</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="starting to work on wirelss">
+      <created>1387133776760</created>
+      <updated>1387133776760</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -537,7 +512,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="starting to work on wirelss" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting to work on wirelss" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -660,7 +636,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/leds/led_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="21" selection-start="338" selection-end="338" vertical-scroll-proportion="0.32380953" vertical-offset="0" max-vertical-offset="525">
+        <state line="6" column="44" selection-start="189" selection-end="189" vertical-scroll-proportion="0.19428572" vertical-offset="0" max-vertical-offset="525">
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

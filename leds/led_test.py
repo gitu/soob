@@ -4,7 +4,7 @@ from wireless import Lamp, LedRing, BlinkBee, TransmitError, Timeout
 
 
 if __name__ == "__main__":
-    xbee_serial = serial.Serial('/dev/ttyAMA0', 9600)
+    xbee_serial = serial.Serial('/dev/ttyUSB0', 9600)
     try:
         blink_bee = BlinkBee(xbee_serial)
         led_ring = LedRing(blink_bee, b'\xff\xfe', XADDR_LED_RING)
