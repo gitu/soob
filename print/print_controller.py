@@ -66,37 +66,12 @@ SPLIT_REGEX = re.compile("(##" + "##|##".join(COMMANDS) + "##)")
 COMMAND_REGEX = re.compile("##(" + "|".join(COMMANDS) + ")##")
 
 
-class PrintController(threading.Thread):
+class PrintController():
     current_command = ""
 
-    def __init__(self, controller, printer):
-        super(PrintController, self).__init__()
-        self.url = controller.config.get("RedFlag", "BaseURL")
-        if controller.config.has_option("RedFlag", "Proxy"):
-            self.proxy = controller.config.get("RedFlag", "Proxy")
-            self.proxies = {"http": self.proxy}
-        else:
-            self.proxies = None
-        self.exit_flag = 0
-        self.controller = controller
+    def __init__(self, printer):
         self.printer = printer
         self.lock = threading.Lock()
-
-    def request_stop(self):
-        self.exit_flag = 1
-
-    def run(self):
-        while not self.exit_flag:
-            p = requests.get(self.url + "print", proxies=self.proxies)
-            if p.status_code == 200:
-                try:
-                    self.print_formatted_text(p.text)
-                except:
-                    print "failed to print"
-                    print "- " + str(sys.exc_info()[0])
-                    print "text: "
-                    print traceback.print_exc() + str(p.text)
-            sleep(4)
 
     def print_formatted_text(self, print_text):
         try:

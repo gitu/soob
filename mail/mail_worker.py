@@ -4,6 +4,7 @@ import email
 import json
 import logging
 from queue import LedCommandQueue
+from queue import PrintQueue
 
 ssl = True
 
@@ -16,6 +17,16 @@ PASSWORD = config.get("Mail","imap_pass")
 NEW_MSG_CRITERIA = ['NOT DELETED', 'UNSEEN', 'FROM '+config.get("Mail","From")]
 
 led_queue = LedCommandQueue()
+print_queue = PrintQueue()
+
+
+def send_print(payload):
+    try:
+        logging.debug(payload)
+        print_queue.append(payload)
+    except Exception, ex:
+        logging.exception("Something awful happened while send_print!")
+
 
 def set_led(payload):
     try:
@@ -37,6 +48,8 @@ def fetch_new_messages():
         logging.debug(u"Payload: " + msg.get_payload(None,True))
         if msg["subject"] == "SET_LED":
             set_led(msg.get_payload(None,True))
+        elif msg["subject"] == "PRINT":
+            send_print(msg.get_payload(None,True))
 
 
 while True:
