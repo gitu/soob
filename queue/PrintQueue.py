@@ -1,8 +1,9 @@
 import SqliteQueue
 import ConfigParser
 
-class PrintQueue(SqliteQueue):
-    def __init__(self):
-        config = ConfigParser.ConfigParser()
-        config.read("../config.ini")
-        super.__init__(config.get("DB","file"),"print_commands")
+def make_print_queue():
+    config = ConfigParser.ConfigParser()
+    config.read("../config.ini")
+    path = config.get("DB","file")
+    q = SqliteQueue(path,"print_commands")
+    return q

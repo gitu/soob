@@ -3,8 +3,12 @@ from imapclient import IMAPClient
 import email
 import json
 import logging
-from queue import LedCommandQueue
-from queue import PrintQueue
+import sys
+sys.path.append("..")
+from queue import make_led_queue
+from queue import make_print_queue
+
+logging.basicConfig(level=logging.DEBUG)
 
 ssl = True
 
@@ -16,8 +20,8 @@ USERNAME = config.get("Mail","imap_user")
 PASSWORD = config.get("Mail","imap_pass")
 NEW_MSG_CRITERIA = ['NOT DELETED', 'UNSEEN', 'FROM '+config.get("Mail","From")]
 
-led_queue = LedCommandQueue()
-print_queue = PrintQueue()
+led_queue = make_led_queue()
+print_queue = make_print_queue()
 
 
 def send_print(payload):
@@ -60,6 +64,7 @@ while True:
 
         select_info = server.select_folder('INBOX')
         logging.debug('%d messages in INBOX' % select_info['EXISTS'])
+        fetch_new_messages()
 
         while True:
             server.idle()
@@ -67,7 +72,7 @@ while True:
             try:
                 while True:
                     responses = server.idle_check(timeout=200)
-                    if [i for i, v in enumerate(responses) if v[1] == u'EXISTS']:
+                    if [i for i, v in enumerate(responses) if v[1] in (u'EXISTS',u'FETCH')]:
                         logging.debug("will fetch new messages")
                         server.idle_done()
                         fetch_new_messages()

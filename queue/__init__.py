@@ -1,3 +1,2 @@
-from LedsCommandQueue import LedCommandQueue
-
-from PrintQueue import PrintQueue
+from LedsCommandQueue import *
+from PrintQueue import *
