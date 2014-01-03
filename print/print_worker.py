@@ -1,10 +1,13 @@
 import serial
 from time import sleep
 import logging
-from queue.PrintQueue import make_print_queue
-from adafruit import Adafruit_Thermal
+from adafruit.Adafruit_Thermal import Adafruit_Thermal
 from print_controller import PrintController
+import sys
+sys.path.append("..")
+from queue import make_print_queue
 
+logging.basicConfig(level=logging.DEBUG)
 
 if __name__ == "__main__":
     print_queue = make_print_queue()

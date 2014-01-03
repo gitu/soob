@@ -1,4 +1,4 @@
-import SqliteQueue
+from SqliteQueue import SqliteQueue
 import ConfigParser
 
 def make_print_queue():
