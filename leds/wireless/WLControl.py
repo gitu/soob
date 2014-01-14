@@ -28,7 +28,7 @@ class WLControl():
             raise NotImplementedError(
                 "API command specifications could not be found; use a derived class which defines 'api_commands'.")
 
-        if args[0] == "unhex":
+        if len(args)==2 and args[0] == "unhex":
             return unhexlify(args[1])
         elif "hex_pack" in cmd_spec:
             hex_arg = args[0].decode('hex')
