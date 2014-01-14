@@ -30,7 +30,7 @@ if __name__ == "__main__":
                     logging.debug("timed out waiting for queues")
                 elif command['action'] == 'set_big':
                     logging.debug(command['data'])
-                    #lamp.set_color(command['data'][0])
+                    lamp.set_color("unhex",command['data'][0])
                 elif command['action'] == 'set_ring':
                     colors = []
                     logging.debug(command['data'])

@@ -1,4 +1,4 @@
-from binascii import hexlify
+from binascii import hexlify, unhexlify
 from struct import pack
 
 
@@ -28,7 +28,9 @@ class WLControl():
             raise NotImplementedError(
                 "API command specifications could not be found; use a derived class which defines 'api_commands'.")
 
-        if "hex_pack" in cmd_spec:
+        if args[0] == "unhex":
+            return unhexlify(args[1])
+        elif "hex_pack" in cmd_spec:
             hex_arg = args[0].decode('hex')
             return pack(cmd_spec["hex_pack"], *hex_arg)
         elif "pack" in cmd_spec:
