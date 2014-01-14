@@ -21,6 +21,8 @@ if __name__ == "__main__":
         led_ring.rotate_off()
         led_ring.level_green(0)
 
+        ring_store = {}
+
         while True:
             try:
                 command = led_queue.popleft()
@@ -28,13 +30,16 @@ if __name__ == "__main__":
                     logging.debug("timed out waiting for queues")
                 elif command['action'] == 'set_big':
                     logging.debug(command['data'])
-                    lamp.set_static(command['data'][0],command['data'][1],command['data'][2])
+                    #lamp.set_color(command['data'][0])
                 elif command['action'] == 'set_ring':
                     colors = []
                     logging.debug(command['data'])
                     for id in range(16):
                         if str(id) in command['data']:
                             colors.append(command['data'][str(id)])
+                            ring_store[str(id)] = command['data'][str(id)]
+                        elif str(id) in ring_store:
+                            colors.append(ring_store[str(id)])
                         else:
                             colors.append("000000")
                     logging.debug("sending colors")
